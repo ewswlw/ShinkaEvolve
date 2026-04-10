@@ -23,13 +23,13 @@ jobs:
         uses: astral-sh/setup-uv@v5
 
       - name: Install project
-        run: uv sync --dev
+        run: uv sync
 
       - name: Ruff
         run: uv run ruff check tests --exclude tests/file.py
 
       - name: Mypy
-        run: uv run mypy --follow-imports=skip --ignore-missing-imports tests/test_*.py tests/conftest.py
+        run: uv run mypy --follow-imports=skip --ignore-missing-imports tests
 
       - name: Pytest + Coverage
         run: uv run --with pytest-cov pytest -q -m "not requires_secrets" --cov=shinka --cov-report=term-missing --cov-report=xml:coverage.xml

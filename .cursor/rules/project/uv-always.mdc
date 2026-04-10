@@ -1,0 +1,11 @@
+---
+description: Use this project's uv-managed .venv for all Python commands.
+globs: ["**/*.py", "**/pyproject.toml", ".github/workflows/*.yml"]
+alwaysApply: true
+---
+
+# UV-only execution (ShinkaEvolve)
+
+- Run Python, pytest, ruff, mypy, black, and CLI entrypoints with **`uv run ...`** from the repo root so the interpreter is always **`.venv`** (never bare `python` / `pip` unless verifying `uv` itself).
+- Install or refresh deps with **`uv sync`** (dev group is default via `[tool.uv] default-groups` in `pyproject.toml`). Use **`uv sync --all-groups`** when working on docs (mkdocs).
+- Prefer **`uv add`** / **`uv remove`** to change dependencies; commit **`uv.lock`** after lock changes.

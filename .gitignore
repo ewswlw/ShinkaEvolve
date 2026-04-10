@@ -100,18 +100,10 @@ ipython_config.py
 #   install all needed dependencies.
 #Pipfile.lock
 
-# UV
-#   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-uv.lock
+# UV — keep uv.lock tracked for reproducible installs (do not ignore).
 
-# poetry
-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-#poetry.lock
+# poetry — this project uses uv; ignore stray Poetry lockfiles
+poetry.lock
 
 # pdm
 #   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
@@ -194,7 +186,10 @@ cython_debug/
 
 # Local editor metadata
 .idea/
-.vscode/
+# Track shared editor interpreter settings; ignore other local VS Code files.
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
 
 # Local browser automation state
 .playwright-cli/
