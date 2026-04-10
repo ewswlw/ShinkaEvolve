@@ -193,3 +193,7 @@ cython_debug/
 
 # Local browser automation state
 .playwright-cli/
+
+# TAA: Bloomberg cache and generated results (see project-constitution.md)
+data/taa/*
+!data/taa/.gitkeep

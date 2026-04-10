@@ -7,6 +7,7 @@ All notable changes to `shinka-evolve` are documented in this file.
 ### Added
 
 - Added the GitHub Pages documentation website for `shinka-evolve`.
+- **2026-04-10 16:02 ET**: Added standalone `taa/` package (tactical asset allocation per `project-spec.md`): Bloomberg `data_pull`, `data_validation`, `features`, `screening`, `regime` (HMM), `model`, `walk_forward`, `backtest`, `tearsheet`, `run_pipeline`; optional extra `[taa]` in `pyproject.toml`; tests under `tests/taa/`.
 
 ### Changed
 
